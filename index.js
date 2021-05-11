@@ -11,7 +11,7 @@ const randomBye = ['Bye bye cả nhà', 'bye mn', 'chào mn']
  * Token của chatops lấy trong session (Tự túc lấy đi)
  * @type {string}
  */
-const token = '5tg9r3xbstnb8n95nc7yox8rie'
+const token = ''
 
 /**
  *
@@ -29,10 +29,9 @@ function auto_diem_danh(hour, minute, timezone, arrayText, range, channel_id) {
     rule.tz = timezone;
 
     schedule.scheduleJob(rule, function(){
-        const x  = Math.floor(Math.random() * range);
         var dataHello = JSON.stringify({
             "channel_id": channel_id,
-            "message": arrayText[x],
+            "message": arrayText[range],
             "root_id": "",
             "props": {}
         });
@@ -47,6 +46,7 @@ function auto_diem_danh(hour, minute, timezone, arrayText, range, channel_id) {
         };
         axios(config)
             .then(function (response) {
+                console.log(JSON.stringify(response.data));
                 const time = moment().tz("Asia/Ho_Chi_Minh").format();
                 console.log('Điểm danh thành công ngày : ' + time)
             })
