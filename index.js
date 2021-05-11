@@ -8,7 +8,7 @@ const randomBye = ['Bye bye cả nhà', 'bye mn', 'chào mn']
  * Token của chatops lấy trong session (Tự túc lấy đi)
  * @type {string}
  */
-const token = '5tg9r3xbstnb8n95nc7yox8rie'
+const token = ''
 
 /**
  *
